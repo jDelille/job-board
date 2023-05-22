@@ -1,0 +1,10 @@
+@import '@/app/scss/variables';
+
+.controlsContainer {
+	background-color: $lighterBlue;
+	width: 100%;
+	padding: 2rem;
+	position: sticky;
+	top: 0;
+	border-bottom: 1px solid $gray;
+}
