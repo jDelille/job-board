@@ -3,7 +3,7 @@ import './scss/globals.scss';
 
 export default function Home() {
   return (
-    <div>
+    <div className='main'>
       <JobsList />
     </div>
   )

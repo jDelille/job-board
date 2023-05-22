@@ -25,7 +25,10 @@ const JobsList = () => {
  return (
   <div className={styles.jobsList}>
    <h1>Results: {resultCount} </h1>
-   {isLoading ? (
+   {error && (
+    <div className={styles.error}>Error: Something went wrong.</div>
+   )}
+   {isLoading && !error ? (
     <p>Loading...</p>
    ) : (
     results?.map((result: Job) => (

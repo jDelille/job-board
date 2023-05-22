@@ -1,3 +1,5 @@
+@import '@/app/scss/variables';
+
 .jobCard {
 	width: 100%;
 	padding: 1rem;
@@ -7,6 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	background-color: $white;
 	.company {
 		padding: 0;
 		font-size: 16px;
