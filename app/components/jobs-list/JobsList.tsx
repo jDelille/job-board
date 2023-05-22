@@ -5,7 +5,6 @@ import useSWR from 'swr'
 import JobCard from "../job-card/JobCard";
 import { Job } from "@/app/types/Job";
 import styles from './JobsList.module.scss';
-import dynamic from "next/dynamic";
 
 const JobsList = () => {
 
@@ -18,11 +17,7 @@ const JobsList = () => {
   url, fetcher
  )
 
- const DynamicMap = dynamic(() => import('../map/Map'), {
-  loading: () => <>
-   <p>Loading...</p>
-  </>
- })
+
 
  console.log(data?.results)
 

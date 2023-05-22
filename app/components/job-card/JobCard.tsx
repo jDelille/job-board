@@ -6,6 +6,7 @@ import Image from "next/image";
 import Tag from "../tag/Tag";
 import { useState } from "react";
 import Map from "../map/Map";
+import dynamic from "next/dynamic";
 
 type JobCardProps = {
  job: Job
@@ -16,6 +17,11 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
  const [openMap, setOpenMap] = useState(false)
  const title = job.title.toLocaleLowerCase();
 
+ const DynamicMap = dynamic(() => import('../map/Map'), {
+  loading: () => <>
+   <div className={styles.loading}>Loading map...</div>
+  </>
+ })
 
  console.log(job)
 
@@ -29,6 +35,11 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
    <p className={styles.title}>{title}</p>
    <p className={styles.location}>{job.location.display_name}</p>
    <p className={styles.description}>{job.description}</p>
+   <div className={styles.salaries}>
+    <p>Salary - <span>Estimated salary</span></p>
+    <p className={styles.salary}>${job.salary_min}</p>
+
+   </div>
    <div className={styles.externalButton}>
     <button onClick={() => setOpenMap(!openMap)}>
 
@@ -39,7 +50,7 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
    </div>
    {openMap && (
     <div className={styles.map}>
-     <Map lat={job.latitude} lng={job.longitude} />
+     <DynamicMap lat={job.latitude} lng={job.longitude} />
     </div>
    )
    }

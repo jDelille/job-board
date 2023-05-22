@@ -27,6 +27,21 @@
 		font-size: 14px;
 		padding: 10px 0;
 	}
+	.salaries {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		font-size: 14px;
+		span {
+			font-style: italic;
+			font-weight: light;
+			font-size: 12px;
+		}
+		.salary {
+			font-weight: 600;
+			color: $successText;
+		}
+	}
 	.externalButton {
 		display: flex;
 		justify-content: flex-end;
@@ -50,14 +65,29 @@
 			}
 		}
 		button {
-			background: $warning;
-			color: $warningText;
-			border: 1px solid $warningBorder;
+			background: $info;
+			color: $infoText;
+			border: 1px solid $infoBorder;
 			&:hover {
-				background-color: darken($warning, 5%);
-				border-color: darken($warningBorder, 5%);
+				background-color: darken($info, 5%);
+				border-color: darken($infoBorder, 5%);
 			}
 		}
+	}
+	.loading {
+		background: $gray;
+		color: $black;
+		border: 1px solid $grayBorder;
+		width: 100%;
+		padding: 1rem;
+		border-radius: 4px;
+		height: fit-content;
+		width: 100%;
+		height: 400px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 22px;
 	}
 	.map {
 		height: 480px;
