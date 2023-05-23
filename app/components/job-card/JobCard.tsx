@@ -23,8 +23,6 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
   </>
  })
 
- console.log(job)
-
 
  return (
   <div className={styles.jobCard}>
